@@ -1,0 +1,27 @@
+{
+  "name": "vcalc",
+  "version": "0.1.1",
+  "description": "Stylus function for calculate unit from px to vw or vmin.",
+  "main": "index.styl",
+  "style": "index.styl",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vwxyutarooo/vcalc-stylus.git"
+  },
+  "keywords": [
+    "stylus",
+    "function",
+    "vw",
+    "vmin",
+    "viewport"
+  ],
+  "author": "vwxyutaroooo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vwxyutarooo/vcalc-stylus/issues"
+  },
+  "homepage": "https://github.com/vwxyutarooo/vcalc-stylus#readme"
+}

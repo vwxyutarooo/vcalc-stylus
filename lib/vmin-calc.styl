@@ -1,0 +1,44 @@
+@charset 'utf-8';
+
+/*
+ * @name Calculate vmin from px
+ * @param { num | list of num }
+ * @param { num }
+ *
+ * @return { num | list of num }
+ */
+vmin-calc($values, $base = $base-vmin-size) {
+  $vmin-values = ();
+  $count = length($values);
+
+  if ($count == 1) {
+    return -zf-to-vmin($values, $base);
+  }
+
+  for $i in (1..$count) {
+    push($vmin-values, -zf-to-vmin(shift($values), $base));
+  }
+
+  return $vmin-values;
+}
+
+
+/*
+ * @name -zf-to-vmin
+ * @param { num }
+ * @param { num }
+ *
+ * @return { num }
+ */
+-zf-to-vmin($value, $base) {
+  if (type-of($value) != 'unit') {
+    error($value + ' was passed to vmin-calc(), which is not a number.');
+    return $value;
+  }
+
+  if unit($value) != 'vmin' {
+    $value = round(unit(remove-unit($value) / remove-unit($base) * 100, 'px'), 6);
+  }
+
+  return $value;
+}

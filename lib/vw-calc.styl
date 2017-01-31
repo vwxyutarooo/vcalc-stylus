@@ -1,0 +1,44 @@
+@charset 'utf-8';
+
+/*
+ * @name Calculate vw from px
+ * @param { num | list of num }
+ * @param { num }
+ *
+ * @return { num | list of num }
+ */
+vw-calc($values, $base = $base-vw-size) {
+  $vw-values = ();
+  $count = length($values);
+
+  if ($count == 1) {
+    return -zf-to-vw($values, $base);
+  }
+
+  for $i in (1..$count) {
+    push($vw-values, -zf-to-vw(shift($values), $base));
+  }
+
+  return $vw-values;
+}
+
+
+/*
+ * @name -zf-to-vw
+ * @param { num }
+ * @param { num }
+ *
+ * @return { num }
+ */
+-zf-to-vw($value, $base) {
+  if (type-of($value) != 'unit') {
+    error($value + ' was passed to vw-calc(), which is not a number.');
+    return $value;
+  }
+
+  if unit($value) != 'vw' {
+    $value = round(unit(remove-unit($value) / remove-unit($base) * 100, 'px'), 6);
+  }
+
+  return $value;
+}
