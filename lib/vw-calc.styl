@@ -37,7 +37,7 @@ vw-calc($values, $base = $base-view-width) {
   }
 
   if unit($value) != 'vw' {
-    $value = round(unit(remove-unit($value) / remove-unit($base) * 100, 'px'), 6);
+    $value = round(unit(remove-unit($value) / remove-unit($base) * 100, 'vw'), 6);
   }
 
   return $value;

@@ -37,7 +37,7 @@ vmin-calc($values, $base = $base-view-width) {
   }
 
   if unit($value) != 'vmin' {
-    $value = round(unit(remove-unit($value) / remove-unit($base) * 100, 'px'), 6);
+    $value = round(unit(remove-unit($value) / remove-unit($base) * 100, 'vmin'), 6);
   }
 
   return $value;
