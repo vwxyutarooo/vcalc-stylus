@@ -1,6 +1,6 @@
 {
   "name": "vcalc-stylus",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Stylus function for calculate unit from px to vw or vmin.",
   "main": "index.styl",
   "style": "index.styl",
