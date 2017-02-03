@@ -15,8 +15,8 @@ vw-calc($values, $base = $base-view-width) {
     return -zf-to-vw($values, $base);
   }
 
-  for $i in (1..$count) {
-    push($vw-values, -zf-to-vw(shift($values), $base));
+  for $i in (0...$count) {
+    push($vw-values, -zf-to-vw($values[$i], $base));
   }
 
   return $vw-values;

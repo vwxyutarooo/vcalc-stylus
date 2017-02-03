@@ -15,8 +15,8 @@ vmin-calc($values, $base = $base-view-width) {
     return -zf-to-vmin($values, $base);
   }
 
-  for $i in (1..$count) {
-    push($vmin-values, -zf-to-vmin(shift($values), $base));
+  for $i in (0...$count) {
+    push($vmin-values, -zf-to-vmin($values[$i], $base));
   }
 
   return $vmin-values;
